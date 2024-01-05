@@ -1,0 +1,46 @@
+{
+  "name": "@chaminjector/seeds-discovery-service",
+  "version": "0.0.1",
+  "description": "Discovery service common structure module for nodejs environment.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build:packages": "rm -rf dist && tsc -p tsconfig.cjs.json && tsc -p tsconfig.types.json && cp package.json dist/package.json",
+    "add:types": "cp -r types dist/types",
+    "add:imports": "echo 'export * from \"../types\";' >> ./dist/_types/index.d.ts",
+    "add:package": "echo '{\"type\": \"commonjs\"}' > dist/_cjs/package.json && cp README.md dist/README.md",
+    "build:dist": "npm run build:packages && npm run add:types && npm run add:imports && npm run add:package",
+    "start:cjs": "node ./_cjs/index.js"
+  },
+  "files": [
+    "./*"
+  ],
+  "keywords": [
+    "@chaminjector",
+    "@chaminjector/platform",
+    "@chaminjector/seeds",
+    "services"
+  ],
+  "author": {
+    "email": "vladyslav.pestsov@gmail.com",
+    "name": "Vladyslav Pestsov"
+  },
+  "typesVersions": {
+    ">=4.2": {
+      "*": [
+        "_types/*",
+        "types/*"
+      ]
+    }
+  },
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.9",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "@types/config": "^3.3.3",
+    "@types/fs-extra": "^11.0.4",
+    "typescript": "^5.3.3"
+  }
+}

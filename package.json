@@ -1,0 +1,22 @@
+{
+  "name": "@chaminjector/thunder-seeds",
+  "version": "1.0.0",
+  "description": "Mono repository for @chaminjector seeds.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pestsov-v/thunder-seeds.git"
+  },
+  "workspaces": {
+    "packages": ["packages/*"]
+  },
+  "keywords": ["@chaminjector-seeds"],
+  "author": {
+    "email": "vladyslav.pestsov@gmail.com",
+    "name": "Vladyslav Pestsov"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pestsov-v/thunder-seeds/issues"
+  },
+  "homepage": "https://github.com/pestsov-v/thunder-seeds#readme"
+}
