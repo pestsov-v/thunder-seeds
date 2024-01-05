@@ -58,6 +58,13 @@ export class AbstractDiscoveryService implements IAbstractDiscoveryService {
     return process.env.NODE_ENV ?? 'production';
   }
 
+  public get config() {
+    if (!this._CONFIG) {
+      throw new Error("Discovery service configuration is undefined.")
+    }
+    return this._CONFIG
+  }
+
   private async _setConfigurations(): Promise<void> {
     try {
       await this._setExternalConfig();

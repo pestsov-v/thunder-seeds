@@ -1,6 +1,6 @@
 {
   "name": "@chaminjector/seeds-discovery-service",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Discovery service common structure module for nodejs environment.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -24,6 +24,14 @@
   "author": {
     "email": "vladyslav.pestsov@gmail.com",
     "name": "Vladyslav Pestsov"
+  },
+  "exports": {
+    ".": {
+      "types": "./_types/*.d.ts",
+      "node": "./_cjs/index.js",
+      "require": "./_cjs/index.js",
+      "default": "./cjs/index.js"
+    }
   },
   "typesVersions": {
     ">=4.2": {

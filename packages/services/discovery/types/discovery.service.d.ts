@@ -1,6 +1,9 @@
+import {Config} from "./packages";
+
 export interface IAbstractDiscoveryService {
     readonly serverTag: string;
     readonly nodeEnv: NDiscoveryService.NodeEnv
+    readonly config: Config.IConfig
 
     init(): Promise<boolean>;
     destroy(): Promise<void>;
